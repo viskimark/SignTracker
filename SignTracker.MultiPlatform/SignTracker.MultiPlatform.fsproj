@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+    <Title>SignTracker</Title>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <AvaloniaResource Include="Assets\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="DatabaseHandler.fs" />
+    <Compile Include="Controls\Sign.fs" />
+    <Compile Include="Controls\InfoBox.fs" />
+    <Compile Include="Controls\SignExtension.fs" />
+    <Compile Include="Models\EditSignModel.fs" />
+    <Compile Include="Models\SignListModel.fs" />
+    <Compile Include="Models\ShellModel.fs" />
+    <Compile Include="Views\EditSignView.fs" />
+    <Compile Include="Views\SignListView.fs" />
+    <Compile Include="Views\ShellView.fs" />
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="11.0.9" />
+    <PackageReference Include="Avalonia.FuncUI" Version="1.2.0" />
+    <PackageReference Include="Avalonia.FuncUI.Elmish" Version="1.2.0" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.9" />
+    <PackageReference Include="Avalonia.Fonts.Inter" Version="11.0.9" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="11.0.9" />
+    <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
+    <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.9" />
+    <PackageReference Include="Elmish" Version="4.1.0" />
+    <PackageReference Include="MySql.Data" Version="8.3.0" />
+    <PackageReference Include="SQLProvider" Version="1.3.23" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SignTracker.MultiPlatform.Database\SignTracker.MultiPlatform.Database.fsproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="FSharp.Core" Version="8.0.101" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,2 @@
+AvaloniaUI és F# segítségével készült multiplatform alkalmazás budapesti busztáblák gyűjtésének követéséhez.
+A multiplatform application written with AvaloniaUI and F#, to help track your collection of signs from Budapest.

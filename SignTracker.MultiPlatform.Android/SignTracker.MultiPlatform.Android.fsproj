@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0-android</TargetFramework>
+    <SupportedOSPlatformVersion>30</SupportedOSPlatformVersion>
+    <ApplicationId>com.CompanyName.SignTracker.MultiPlatform</ApplicationId>
+    <ApplicationVersion>1</ApplicationVersion>
+    <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+    <AndroidPackageFormat>apk</AndroidPackageFormat>
+    <AndroidEnableProfiledAot>False</AndroidEnableProfiledAot>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <RunAOTCompilation>True</RunAOTCompilation>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <AndroidResource Include="Icon.png">
+      <Link>Resources\drawable\Icon.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="Resources\*\*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Activities.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia.Android" Version="11.0.9" />
+    <PackageReference Include="MySql.Data" Version="8.3.0" />
+    <PackageReference Include="Xamarin.AndroidX.Core.SplashScreen" Version="1.0.1.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SignTracker.MultiPlatform\SignTracker.MultiPlatform.fsproj" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Update="FSharp.Core" Version="8.0.101" />
+  </ItemGroup>
+</Project>
